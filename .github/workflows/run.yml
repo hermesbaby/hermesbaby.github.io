@@ -25,7 +25,7 @@ jobs:
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Install HermesBaby
         run: |
-          uv tool install hermesbaby
+          uv tool install --from git+https://github.com/hermesbaby/hermesbaby.git@main hermesbaby
           uv tool update-shell
           hermesbaby --version
       - name: Install HermesBaby toolbox
