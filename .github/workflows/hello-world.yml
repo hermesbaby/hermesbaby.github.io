@@ -7,6 +7,20 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
+      - name: Install uv package manager
+        run: |
+          python3 -m pip install --user uv
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Install HermesBaby tooling
+        run: |
+          uv tool install hermesbaby
+          uv tool update-shell
+          hermesbaby --version
       - name: Echo greeting and verify exit code
         run: |
-          echo "Omnium enim rerum principia parva sunt. (The beginnings of all things are small."
+          echo "Omnium enim rerum principia parva sunt. (The beginnings of all things are small.)"
+          status=$?
+          if [ "$status" -ne 0 ]; then
+            echo "Echo command failed with status $status"
+            exit $status
+          fi
