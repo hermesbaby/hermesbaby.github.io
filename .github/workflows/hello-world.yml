@@ -13,19 +13,14 @@ jobs:
         run: |
           python3 -m pip install --user uv
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
-      - name: Install HermesBaby tooling
+      - name: Install HermesBaby
         run: |
           uv tool install hermesbaby
           uv tool update-shell
           hermesbaby --version
-      - name: hb tools install
+      - name: Install HermesBaby's toolbox
         run: |
           source .github/workflows/mock_hb_tools_install.sh
-      - name: Echo greeting and verify exit code
+      - name: Build site
         run: |
-          echo "Omnium enim rerum principia parva sunt. (The beginnings of all things are small.)"
-          status=$?
-          if [ "$status" -ne 0 ]; then
-            echo "Echo command failed with status $status"
-            exit $status
-          fi
+          hb html
