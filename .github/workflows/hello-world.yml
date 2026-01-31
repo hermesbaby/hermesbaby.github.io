@@ -1,0 +1,12 @@
+name: Hello World Check
+
+on:
+  push:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo greeting and verify exit code
+        run: |
+          echo "Omnium enim rerum principia parva sunt. (The beginnings of all things are small."
