@@ -32,4 +32,6 @@ HermesBaby in its operational context: engineers, Git, CI, rendering toolchain, 
   - Receives the static HTML output published by `hb publish`. Serves the documentation to readers. The portal must be reachable from the build host via SSH and must support static file serving.
 * - **Access-Control Mechanism**
   - HermesBaby generates access-control artefacts (e.g. `.htaccess` files) derived from the documentation structure and the confidentiality settings in `.hermesbaby`. These artefacts are deployed alongside the HTML output so that the portal's web server can enforce access restrictions on individual sections.
+* - **AI Assistant / LLM**
+  - Engineers use large language model assistants to synthesise information from standards, specifications, and codebases, and to generate draft documentation content. Because HermesBaby source files are plain text stored in Git, they are directly indexable and referenceable by AI tools — stable headings and cross-references act as anchors for precise, scoped answers {cite:p}`DocsAsCode2025`. AI-assisted authoring is a natural extension of the Docs-as-Code workflow.
 ```

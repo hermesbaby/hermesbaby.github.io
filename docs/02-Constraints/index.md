@@ -46,6 +46,8 @@ Constraints limit the solution space for HermesBaby's architecture and implement
   - Repository, issue tracking, pull requests, and CI/CD pipelines all run on GitHub. Contributions follow the standard GitHub pull-request workflow.
 * - No breaking changes to the CLI or `.hermesbaby` format without a MAJOR version bump
   - Engineering teams embed `hb` commands in CI scripts and commit `.hermesbaby` files to repositories. Breaking these without a clear version signal would silently break downstream projects.
+* - No dependency on proprietary or commercial tool licences for reading, reviewing, or building
+  - Regulated engineering mandates traceability, auditability, and rigor — not specific tools {cite:p}`SpecCenteredEngineering2026`. Every part of the HermesBaby workflow must be accessible with free, open-source tools. No contributor or reviewer should need a commercial licence to open, diff, or review any documentation artefact.
 ```
 
 (sec_conventions)=

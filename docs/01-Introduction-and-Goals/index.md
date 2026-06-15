@@ -6,9 +6,13 @@
 
 ## Requirements Overview
 
-Engineering organisations face a persistent gap between source code management and technical documentation management. Documentation produced in conventional office tools is disconnected from version control, resistant to automated validation, and hard to baseline with precision. In regulated domains — machinery, medical devices, automotive electronics, industrial automation — this gap is a compliance risk: standards such as IEC 62304, Automotive SPICE, and ISO/IEC/IEEE 15288 require controlled, reviewable, traceable, and baselined technical documentation as part of the engineering evidence record.
+In complex engineering environments, documentation is not an afterthought — it is an engineering discipline of its own {cite:p}`DocsAsCode2025`. Specifications, interfaces, workflows, and handbooks must be accurate and versioned, readable and reviewable, traceable and testable. Yet two common failure modes undermine this in practice.
 
-HermesBaby makes the Docs-as-Code approach turnkey for software and systems engineers. It provides a CLI-first environment built on Sphinx and MyST Markdown, integrated with Git-based workflows and CI/CD pipelines. Its essential functions are:
+First, documentation produced in conventional office tools (word processors, shared drives, wikis) is disconnected from version control, resistant to automated validation, and hard to baseline with precision. In regulated domains — machinery, medical devices, automotive electronics, industrial automation — this is a compliance risk: standards such as IEC 62304, Automotive SPICE, and ISO/IEC/IEEE 15288 require controlled, reviewable, traceable, and baselined technical documentation as part of the engineering evidence record.
+
+Second, heavyweight modeling tools (Enterprise Architect, IBM Rational Rhapsody, DOORS) promise integrated traceability but often fail to establish a shared, precise, and verifiable understanding of a system {cite:p}`SpecCenteredEngineering2026`. Proprietary formats trap information, reviewing changes requires a tool licence, and exported diagrams routinely substitute for actual written specifications. The tool's structural coherence is mistaken for semantic correctness.
+
+HermesBaby makes the Docs-as-Code approach turnkey for software and systems engineers, avoiding both failure modes. It provides a CLI-first environment built on Sphinx and MyST Markdown, integrated with Git-based workflows and CI/CD pipelines. Its essential functions are:
 
 1. **Template-based project creation** — `hb new --template <name>` scaffolds a documentation project from a proven template (arc42, user guide, etc.) without configuring a toolchain from scratch.
 2. **Deterministic, CLI-driven builds** — `hb html` invokes a reproducible Sphinx-based build that produces identical output from identical source and configuration.
@@ -31,10 +35,10 @@ Reproducibility
 : The same source and configuration must always produce the same documentation output. Non-reproducible builds undermine auditability and make compliance evidence unreliable. Maps to **Reliability**.
 
 Auditability
-: Every change to documentation must be traceable to an author, a time, and a reason. Publishing, access control, and configuration must be inspectable. Regulated engineering requires full audit trails. Maps to **Security** and **Maintainability**.
+: Every change to documentation must be traceable to an author, a time, and a reason. Publishing, access control, and configuration must be inspectable. The written specification — not a diagram or a tool model — is the authoritative source of truth {cite:p}`SpecCenteredEngineering2026`. Regulated engineering requires full, licence-free audit trails. Maps to **Security** and **Maintainability**.
 
 Engineer Usability
-: Engineers should author, build, and publish documentation without becoming documentation-tooling experts. High setup friction leads to documentation rot. Maps to **Interaction Capability**.
+: Engineers should author, build, and publish documentation without becoming documentation-tooling experts. Staying in a familiar toolchain — text editor, Git, CI — lowers the contribution barrier and increases documentation accuracy {cite:p}`DocsAsCode2025`. High setup friction leads to documentation rot. Maps to **Interaction Capability**.
 
 Corporate Integrability
 : HermesBaby must integrate into existing CI/CD pipelines, corporate documentation portals, access-control mechanisms, and restricted or air-gapped network environments. Maps to **Compatibility**.
