@@ -205,6 +205,45 @@ Common options:
 | `:alt:` | `"a graph"` | Accessibility / screen-reader text |
 | `:name:` | `fig_my_name` | Inline label, alternative to the `(label)=` prefix |
 
+### DrawIO File Formats Compared
+
+DrawIO diagrams can be committed and embedded in three ways. Each has different trade-offs for
+git, IDE preview, and build complexity:
+
+| Aspect | `.drawio.png` | `.drawio.svg` | `.drawio` |
+| ------ | :-----------: | :-----------: | :-------: |
+| Directive | `{figure}` | `{figure}` | `{drawio-figure}` |
+| Git diff | binary — no diff | text-based XML diff | text-based XML diff |
+| Git LFS needed | recommended | no | no |
+| IDE / GitHub preview | instant raster preview | renders as vector | renders as diagram (GitHub) |
+| Vector / scalable | no | yes | yes |
+| Print / high-DPI quality | limited by export resolution | crisp at any size | crisp at any size |
+| Build-time dependency | none | none | DrawIO plugin required |
+| Multi-page support | one export per page | one export per page | `:page-name:` selects page |
+| Hyperlinks in diagram | lost on export | lost on export | preserved |
+| Embedded source in file | yes (in PNG metadata) | yes (in SVG XML) | the file is the source |
+
+**`.drawio.png`** — Simplest to preview everywhere but bloats the repository over time and
+produces binary diffs. Export at 2× or higher resolution to stay readable on high-DPI screens.
+Use only when the build environment has no SVG renderer or when a raster is explicitly required.
+
+**`.drawio.svg`** — Best default for most diagrams. Scales losslessly, diffs as text, previews
+in the IDE and on GitHub, and requires no build plugin. The SVG file also carries the DrawIO
+XML source in an embedded attribute, so the original diagram is always recoverable. Use `{figure}`
+to embed it:
+
+````markdown
+```{figure} _figures/architecture.drawio.svg
+:align: center
+:width: 90%
+
+System context overview.
+```
+````
+
+**`.drawio`** — Use when you need multi-page navigation or hyperlinks between diagram nodes. The
+`{drawio-figure}` plugin renders the raw source server-side during the build.
+
 ### `{drawio-figure}` — DrawIO Source Diagrams
 
 Use `{drawio-figure}` when you want to embed a `.drawio` file directly — the plugin renders it
@@ -225,7 +264,6 @@ has only one page the option can be omitted.
 ```{note}
 If you exported a DrawIO diagram as a static `.drawio.svg` file, use the plain `{figure}`
 directive instead — `{drawio-figure}` expects the raw `.drawio` XML source.
-See [Conventions](conventions.md) for the policy on which format to use where.
 ```
 
 ---
