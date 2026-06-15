@@ -3,6 +3,8 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
+sudo apt-get update
+
 sudo apt-get install -y xvfb
 
 version=29.3.6
