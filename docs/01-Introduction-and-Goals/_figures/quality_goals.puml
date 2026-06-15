@@ -1,16 +1,15 @@
 @startmindmap quality-goals
-'Feel free to mark the important quality goals with a nice color like [#lightblue].
 *[#lightcoral] Software Product Quality
-**[#lightblue] Function Suitability
+** Function Suitability
 ** Performance Efficiency
-** Compatibility
-** Interaction Capability
+**[#lightblue] Compatibility
+**[#lightblue] Interaction Capability
 
 left side
 
-** Reliability
-** Security
-** Maintainability
-** Flexibility
+**[#lightblue] Reliability
+**[#lightblue] Security
+**[#lightblue] Maintainability
+**[#lightblue] Flexibility
 ** Safety
 @endmindmap
