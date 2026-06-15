@@ -12,7 +12,6 @@ template: true
 Name Patron
 ```
 
-
 ```{toctree}
 :numbered:
 :hidden:
@@ -30,6 +29,8 @@ Name Patron
 10-Quality-Requirements/index
 11-Risks-and-Technical-Debt/index
 12-Glossary/index
+
+13-User-Guide/index.md
 
 99-Appendix/index
 ```
