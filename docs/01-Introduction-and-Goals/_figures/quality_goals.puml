@@ -1,0 +1,15 @@
+@startmindmap quality-goals
+*[#lightcoral] Software Product Quality
+** Function Suitability
+** Performance Efficiency
+**[#lightblue] Compatibility
+**[#lightblue] Interaction Capability
+
+left side
+
+**[#lightblue] Reliability
+**[#lightblue] Security
+**[#lightblue] Maintainability
+**[#lightblue] Flexibility
+** Safety
+@endmindmap
