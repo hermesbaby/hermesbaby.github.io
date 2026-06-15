@@ -29,6 +29,15 @@
 
     "pasteImage.insertPattern": "(fig_${imageFileNameWithoutExt})=\n\n```{figure} ${imageFilePath}\n${imageFileNameWithoutExt}\n```\n\n",
 
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "always"
+    },
+
+    "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+    },
+
     // *** OTHER PURPOSES *************************************************
 
     // *** Testing ********************************************************

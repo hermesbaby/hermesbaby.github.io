@@ -1,7 +1,9 @@
 (sec_introduction_and_goals)=
+
 # Introduction and Goals
 
 (sec_problem_formulation)=
+
 ## Requirements Overview
 
 Engineering organisations face a persistent gap between source code management and technical documentation management. Documentation produced in conventional office tools is disconnected from version control, resistant to automated validation, and hard to baseline with precision. In regulated domains — machinery, medical devices, automotive electronics, industrial automation — this gap is a compliance risk: standards such as IEC 62304, Automotive SPICE, and ISO/IEC/IEEE 15288 require controlled, reviewable, traceable, and baselined technical documentation as part of the engineering evidence record.
@@ -16,6 +18,7 @@ HermesBaby makes the Docs-as-Code approach turnkey for software and systems engi
 6. **Kconfig-based project configuration** — A single `.hermesbaby` file drives all document metadata, build paths, publishing targets, and styling, making configuration explicit, versionable, and reproducible.
 
 (sec_quality_goals)=
+
 ## Quality Goals
 
 The following quality goals are the most important drivers for HermesBaby's architecture. They are mapped to the ISO/IEC 25010 quality model {cite:p}`ISO_25010`.
@@ -43,6 +46,7 @@ Maintainability
 : The CLI, templates, Sphinx extensions, and publishing logic must remain modular and independently evolvable. Tight coupling to specific Sphinx extension versions creates toolchain-drift risk.
 
 (sec_stakeholders)=
+
 ## Stakeholders
 
 ```{list-table}
