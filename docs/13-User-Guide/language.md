@@ -54,8 +54,7 @@ levels provide section hierarchy:
 
 ```{note}
 Heading levels also determine navigation depth. Avoid skipping levels (e.g. jumping from `##`
-to `####`). Headings automatically generate anchor links, but prefer explicit
-[cross-reference labels](#links) when linking to a section from another file.
+to `####`).
 ```
 
 ---
@@ -706,13 +705,13 @@ This section is intentionally left blank until the review is complete.
 
 Comments also work to disable a directive block:
 
-```html
+````html
 <!--
 ```{todo}
 Add example project walkthrough
 ```
 -->
-```
+````
 
 ---
 
