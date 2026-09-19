@@ -38,6 +38,12 @@ directive:
 Paths are relative to the current file and omit the `.md` extension. The `:hidden:` option keeps
 the entries out of the rendered page body while still building the navigation tree.
 
+```{note}
+This is the default "directive" toctree mode. hermesbaby can also derive the toctree
+automatically from the folder/file layout, with no `{toctree}` directives at all — see
+{ref}`sec_toctree_modes`.
+```
+
 ---
 
 ## Headings

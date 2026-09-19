@@ -10,5 +10,6 @@ ones so you can get productive quickly and return to the advanced sections when 
 :maxdepth: 1
 
 language.md
+toctree-modes.md
 conventions.md
 ```
