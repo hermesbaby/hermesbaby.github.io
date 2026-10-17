@@ -64,7 +64,7 @@ to `####`).
 Separate paragraphs with a blank line. Inline formatting:
 
 | Effect | Syntax | Result |
-|--------|--------|--------|
+| ------ | ------ | ------ |
 | Bold | `**text**` | **text** |
 | Italic | `*text*` | *text* |
 | Inline code | `` `code` `` | `code` |
@@ -524,7 +524,7 @@ Caption text that appears below the image.
 Common figure options:
 
 | Option | Example | Effect |
-|---|---|---|
+| --- | --- | --- |
 | `:align:` | `center` | Horizontal alignment |
 | `:width:` | `80%` or `15cm` | Rendered width |
 | `:scale:` | `60%` | Scale relative to original |
@@ -608,7 +608,7 @@ The Handbook has not been approved so that there is no released version yet.
 
 Roles are inline elements that produce rich output. The syntax is:
 
-```
+```text
 {role-name}`content`
 ```
 
@@ -673,7 +673,7 @@ See {doc}`/12-Glossary/index` for all terms.
 ### Project-Specific Roles
 
 | Role | Example | Renders as |
-|---|---|---|
+| --- | --- | --- |
 | `{jira}` | `` {jira}`PJBIO-1060` `` | Link to Jira ticket |
 | `{user}` | `` {user}`AMAN` `` | Mention a team member |
 | `{repo}` | `` {repo}`biom/BiomechWebGui` `` | Link to repository |
@@ -774,7 +774,7 @@ ambiguity.
 ## Quick Reference
 
 | Element | Syntax | When to use |
-|---|---|---|
+| --- | --- | --- |
 | Bold | `**text**` | Emphasize important terms or values |
 | Italic | `*text*` | Titles of external works, gentle emphasis |
 | Inline code | `` `code` `` | File names, identifiers, commands |
