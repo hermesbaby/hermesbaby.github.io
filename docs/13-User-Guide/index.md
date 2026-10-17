@@ -12,6 +12,6 @@ navigation and MyST features as your documentation grows.
 
 basics.md
 features.md
-language.md
+language-reference.md
 conventions.md
 ```

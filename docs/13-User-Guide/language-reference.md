@@ -1,13 +1,52 @@
 (sec_authoring_guide)=
-
 # MyST Markdown Reference
 
 MyST Markdown extends CommonMark with directives, roles, and cross-referencing for technical
 documentation. This page is the complete syntax reference: if you are new to MyST, start with
 [MyST Markdown Basics](basics.md), then return here as you need more features.
 
+## Reference index
+
+### Pages and document structure
+
+* {ref}`ref_document_structure`
+* {ref}`ref_headings`
+* {ref}`ref_toctree`
+* {ref}`ref_paragraphs`
+
+### Everyday Markdown
+
+* {ref}`ref_lists`
+* {ref}`ref_links`
+* {ref}`ref_code`
+* {ref}`ref_blockquotes`
+
+### Figures and structured content
+
+* {ref}`ref_figures`
+* {ref}`ref_drawio_figures`
+* {ref}`ref_tables`
+
+### Cross-references and citations
+
+* {ref}`ref_cross_references`
+* {ref}`ref_citations`
+* {ref}`ref_footnotes`
+
+### Other MyST features
+
+* {ref}`ref_admonitions`
+* {ref}`ref_directives`
+* {ref}`ref_roles`
+* {ref}`ref_definition_lists`
+* {ref}`ref_frontmatter`
+* {ref}`ref_html_comments`
+
+## Markdown and page structure
+
 ---
 
+(ref_document_structure)=
 ## Document Structure
 
 Every file is a self-contained page. The minimal skeleton looks like this:
@@ -19,6 +58,7 @@ Every file is a self-contained page. The minimal skeleton looks like this:
 First paragraph of content.
 ```
 
+(ref_toctree)=
 ### Table of Contents: `{toctree}`
 
 Every section index file defines which child pages appear under it using the `{toctree}`
@@ -39,6 +79,7 @@ the entries out of the rendered page body while still building the navigation tr
 
 ---
 
+(ref_headings)=
 ## Headings
 
 Use ATX-style headings. Each file should have exactly one H1 (`#`) as its page title. Subsequent
@@ -58,6 +99,7 @@ to `####`).
 
 ---
 
+(ref_paragraphs)=
 ## Paragraphs and Basic Inline Formatting
 
 Separate paragraphs with a blank line. Inline formatting:
@@ -73,6 +115,7 @@ configuration keys, and technical terms.
 
 ---
 
+(ref_lists)=
 ## Lists
 
 ### Unordered Lists
@@ -121,6 +164,7 @@ Checkbox lists mark completion status (used primarily in requirement checklists)
 
 ---
 
+(ref_links)=
 ## Links
 
 ### External and Page-Relative Links
@@ -138,6 +182,7 @@ For bare URLs that should be clickable as-is, use angle brackets:
 <https://mystmd.org>
 ```
 
+(ref_cross_references)=
 ### Cross-Reference Labels
 
 This is the primary way to link between pages in MyST. First, place a **label** immediately
@@ -166,6 +211,7 @@ See [Conventions](conventions.md) for the full label naming policy.
 
 ---
 
+(ref_figures)=
 ## Figures
 
 All figures — raster images, exported SVGs, and DrawIO source files — live in a `_figures/`
@@ -242,6 +288,7 @@ System context overview.
 **`.drawio`** — Use when you need multi-page navigation or hyperlinks between diagram nodes. The
 `{drawio-figure}` plugin renders the raw source server-side during the build.
 
+(ref_drawio_figures)=
 ### `{drawio-figure}` — DrawIO Source Diagrams
 
 Use `{drawio-figure}` when you want to embed a `.drawio` file directly — the plugin renders it
@@ -293,6 +340,7 @@ Inline diagrams do not have captions or cross-reference labels. Use `{drawio-fig
 
 ---
 
+(ref_tables)=
 ## Tables
 
 ### Pipe Tables
@@ -353,6 +401,7 @@ code spans, or even nested lists.
 
 ---
 
+(ref_code)=
 ## Code
 
 ### Inline Code
@@ -411,6 +460,7 @@ print("hello")
 
 ---
 
+(ref_blockquotes)=
 ## Blockquotes
 
 Use `>` for quotations from external sources:
@@ -423,6 +473,7 @@ Use `>` for quotations from external sources:
 
 ---
 
+(ref_admonitions)=
 ## Admonitions
 
 Admonitions are colored call-out boxes that use the **directive** syntax.
@@ -490,6 +541,7 @@ Explain how to manage branches and create content.
 
 ---
 
+(ref_directives)=
 ## Directives
 
 Directives are the core building block of MyST. The syntax is a fenced code block where the
@@ -604,6 +656,7 @@ The Handbook has not been approved so that there is no released version yet.
 
 ---
 
+(ref_roles)=
 ## Roles (Inline Directives)
 
 Roles are inline elements that produce rich output. The syntax is:
@@ -640,6 +693,7 @@ Renders the abbreviation with a tooltip showing the full form:
 The {abbr}`SoI(System of Interest)` defines the scope.
 ```
 
+(ref_citations)=
 ### `{cite}` — Bibliographic Citations
 
 Links to an entry in the bibliography:
@@ -662,6 +716,21 @@ takes precedence; if neither field has a value, HermesBaby uses the generated la
 
 This entry is cited as `[SLA]`.
 
+### Displaying a Bibliography
+
+Add a bibliography page to the toctree and put the `{bibliography}` directive on it to display
+the works cited in your documentation:
+
+````markdown
+# Bibliography
+
+```{bibliography}
+```
+````
+
+For example, see [the project's bibliography page](../99-Appendix/04-Bibliography/index.md).
+BibTeX entries are stored in `docs/bibliography.bib`; cite an entry by its key with `{cite}`.
+
 ### `{doc}` — Link to Another Document by Path
 
 Links to another page using its file path relative to the project root:
@@ -683,6 +752,7 @@ See {doc}`/12-Glossary/index` for all terms.
 
 ---
 
+(ref_definition_lists)=
 ## Definition Lists
 
 For term–definition pairs (API methods, glossary-like content within a page):
@@ -700,6 +770,7 @@ The term line ends with `:`, and the definition starts with `:` on the next line
 
 ---
 
+(ref_footnotes)=
 ## Footnotes
 
 Place a footnote marker inline, then define it anywhere in the file:
@@ -715,6 +786,7 @@ clarifications that would interrupt the main flow if inlined.
 
 ---
 
+(ref_frontmatter)=
 ### File Frontmatter
 
 Frontmatter is a YAML block between `---` delimiters at the very top of the file. It is optional
@@ -732,6 +804,7 @@ it for standalone pages or drafts not yet wired into the navigation. See
 
 ---
 
+(ref_html_comments)=
 ## HTML Comments
 
 Use HTML comments to hide editorial notes, disabled content, or temporarily disabled directives

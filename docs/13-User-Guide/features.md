@@ -47,7 +47,8 @@ hb html --live
 ```
 
 Use `hb clean` to remove generated build output. For the basic authoring syntax, see
-[MyST Markdown Basics](basics.md); for the complete syntax, see the [MyST reference](language.md).
+[MyST Markdown Basics](basics.md); for the complete syntax, see the
+[MyST reference](language-reference.md).
 
 ## 4. Build part of a project
 
@@ -100,5 +101,5 @@ Hermesbaby installs the requirements listed in that directory when needed and ap
 
 ## Further reading
 
-Continue to the [MyST Markdown reference](language.md) for syntax details, or read the
+Continue to the [MyST Markdown reference](language-reference.md) for syntax details, or read the
 [authoring conventions](conventions.md) for this documentation project's organizational guidelines.
