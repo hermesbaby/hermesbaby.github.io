@@ -53,7 +53,20 @@ Use asterisks for unordered lists and numbers for steps:
 Indent nested items by two spaces.
 See {ref}`ref_lists` for list syntax and variants.
 
-## 4. Add links and code
+## 4. Make a table
+
+Use a pipe table for a few short values:
+
+```markdown
+| Command | Purpose |
+| ------- | ------- |
+| `hb html` | Build the documentation |
+| `hb html --live` | Preview changes |
+```
+
+For details and longer tables, see {ref}`ref_tables`.
+
+## 5. Add links and code blocks
 
 Use standard Markdown links for websites and other pages:
 
@@ -63,8 +76,8 @@ Use standard Markdown links for websites and other pages:
 ```
 See {ref}`ref_links` for external, page-relative, and labeled links.
 
-Use backticks for a command or a short code example, and fenced blocks for longer examples. Add a
-language name after the opening fence when syntax highlighting is useful:
+Use backticks for a command or short code snippet. For multiple lines, put the code in a fenced
+block and add its language after the opening fence for syntax highlighting:
 
 ````markdown
 Run `hb html` to build the documentation.
@@ -75,7 +88,7 @@ print("Hello, documentation!")
 ````
 See {ref}`ref_code` for inline code, fenced blocks, and code-block options.
 
-## 5. Connect pages
+## 6. Connect pages
 
 When your documentation has more than one page, list child pages in a `{toctree}` on the section's
 `index.md`:
@@ -94,7 +107,7 @@ is its entry point.
 See {ref}`ref_toctree` for toctree options and {ref}`ref_document_structure` for page and folder
 structure.
 
-## 6. Add a DrawIO figure
+## 7. Add a DrawIO figure
 
 Save the diagram as a `.drawio` file in a `_figures/` folder next to the page, then embed it with
 the `{drawio-figure}` directive:
@@ -109,7 +122,7 @@ System overview.
 For a static exported `.drawio.svg`, use `{figure}` instead. See {ref}`ref_drawio_figures` and
 {ref}`ref_figures` for figure formats and options.
 
-## 7. Link to a section
+## 8. Link to a section
 
 Add a label immediately before the heading you want to link to, then use `{ref}` where the link
 should appear:
@@ -127,7 +140,7 @@ Labels are stable identifiers; use lowercase words separated by underscores. To 
 by its number, use `{numref}` with the figure label, such as `{numref}`fig_system_overview``.
 See {ref}`ref_cross_references` for label and reference syntax.
 
-## 8. Add a footnote
+## 9. Add a footnote
 
 Put a footnote marker where the extra detail belongs and define its text elsewhere on the page:
 
@@ -138,7 +151,7 @@ MyST supports footnotes[^myst-note].
 ```
 See {ref}`ref_footnotes` for footnote syntax and guidance.
 
-## 9. Cite a source
+## 10. Cite a source
 
 Add a BibTeX entry to `docs/bibliography.bib`, then cite its key in your text with `{cite}`:
 
@@ -167,7 +180,7 @@ To display the cited sources on a bibliography page, add the `{bibliography}` di
 The project's `docs/99-Appendix/04-Bibliography/index.md` is an example. See
 {ref}`ref_citations` for citations and bibliography display.
 
-## 10. Quote a passage
+## 11. Quote a passage
 
 Start a line with `>` to format it as a blockquote:
 
@@ -176,6 +189,23 @@ Start a line with `>` to format it as a blockquote:
 ```
 
 See {ref}`ref_blockquotes` for blockquote syntax.
+
+## 12. Add a callout
+
+Use an admonition to make a note or warning stand out from the surrounding text:
+
+````markdown
+```{note}
+Run `hb html` to build the documentation.
+```
+
+```{warning}
+Check the rendered page before publishing.
+```
+````
+
+See {ref}`ref_admonitions` for callout types and {ref}`ref_directives` for the general directive
+syntax.
 
 ## Next steps
 
