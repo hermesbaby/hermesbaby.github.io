@@ -183,7 +183,7 @@ exported SVG as an image — simpler but without interactivity.
 static"; `.drawio` signals "source, live-rendered".
 
 You can also embed DrawIO XML inline in a Markdown `drawio` fenced block. See
-[MyST Markdown](language.md#inline-drawio-diagrams) for syntax and limitations.
+{ref}`sec_inline_drawio_diagrams` for syntax and limitations.
 
 ---
 

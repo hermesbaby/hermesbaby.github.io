@@ -265,6 +265,7 @@ If you exported a DrawIO diagram as a static `.drawio.svg` file, use the plain `
 directive instead — `{drawio-figure}` expects the raw `.drawio` XML source.
 ```
 
+(sec_inline_drawio_diagrams)=
 ### Inline DrawIO Diagrams
 
 You can also embed DrawIO XML directly in a fenced block using the `drawio` language:
