@@ -265,6 +265,32 @@ If you exported a DrawIO diagram as a static `.drawio.svg` file, use the plain `
 directive instead — `{drawio-figure}` expects the raw `.drawio` XML source.
 ```
 
+### Inline DrawIO Diagrams
+
+You can also embed DrawIO XML directly in a fenced block using the `drawio` language:
+
+````markdown
+```drawio locked height=300
+<mxfile host="app.diagrams.net">
+  <diagram id="example" name="Architecture">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+```
+````
+
+No configuration is needed. HermesBaby renders inline diagrams as SVG for HTML and PDF for PDF
+builds. The optional `locked` and `height=N` attributes control the VS Code editor only; they do
+not change the published diagram. Only the first page of a multi-page diagram is rendered.
+
+Inline diagrams do not have captions or cross-reference labels. Use `{drawio-figure}` with a
+`.drawio` file when you need those, or need to select a page.
+
 ---
 
 ## Tables
@@ -621,6 +647,20 @@ Links to an entry in the bibliography:
 ```markdown
 As defined in {cite}`iso_24748_1_2024`, the lifecycle has six stages.
 ```
+
+Set a custom citation label for any BibTeX entry with its `label` or `shorthand` field. `label`
+takes precedence; if neither field has a value, HermesBaby uses the generated label as before:
+
+```bibtex
+@misc{sla,
+  title  = {Service Level Agreement},
+  author = {Example Author},
+  year   = {2026},
+  label  = {SLA}
+}
+```
+
+This entry is cited as `[SLA]`.
 
 ### `{doc}` — Link to Another Document by Path
 
