@@ -100,16 +100,14 @@ Save the diagram as a `.drawio` file in a `_figures/` folder next to the page, t
 the `{drawio-figure}` directive:
 
 ````markdown
-(fig_system_overview)=
 ```{drawio-figure} _figures/system_overview.drawio
-:page-name: Overview
 
 System overview.
 ```
 ````
 
-The label lets you refer to the diagram later. For a static exported `.drawio.svg`, use `{figure}`
-instead. See {ref}`ref_drawio_figures` and {ref}`ref_figures` for figure formats and options.
+For a static exported `.drawio.svg`, use `{figure}` instead. See {ref}`ref_drawio_figures` and
+{ref}`ref_figures` for figure formats and options.
 
 ## 7. Link to a section
 
