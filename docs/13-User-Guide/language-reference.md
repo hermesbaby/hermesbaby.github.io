@@ -44,8 +44,6 @@ documentation. This page is the complete syntax reference: if you are new to MyS
 
 ## Markdown and page structure
 
----
-
 (ref_document_structure)=
 ## Document Structure
 
