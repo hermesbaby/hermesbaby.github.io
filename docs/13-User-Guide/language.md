@@ -1,11 +1,10 @@
 (sec_authoring_guide)=
 
-# MyST Markdown
+# MyST Markdown Reference
 
-This documentation uses **MyST Markdown** — a superset of CommonMark that adds directives,
-roles, and cross-referencing to plain Markdown. This guide walks through every syntax construct
-used in this project, starting from the basics you'll need every day and ending with the more
-specialized features.
+MyST Markdown extends CommonMark with directives, roles, and cross-referencing for technical
+documentation. This page is the complete syntax reference: if you are new to MyST, start with
+[MyST Markdown Basics](basics.md), then return here as you need more features.
 
 ---
 
