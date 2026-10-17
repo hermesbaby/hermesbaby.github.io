@@ -9,6 +9,7 @@ ones so you can get productive quickly and return to the advanced sections when 
 ```{toctree}
 :maxdepth: 1
 
+features.md
 language.md
 conventions.md
 ```

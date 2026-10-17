@@ -64,7 +64,7 @@ to `####`).
 Separate paragraphs with a blank line. Inline formatting:
 
 | Effect | Syntax | Result |
-|--------|--------|--------|
+| ------ | ------ | ------ |
 | Bold | `**text**` | **text** |
 | Italic | `*text*` | *text* |
 | Inline code | `` `code` `` | `code` |
@@ -264,6 +264,33 @@ has only one page the option can be omitted.
 If you exported a DrawIO diagram as a static `.drawio.svg` file, use the plain `{figure}`
 directive instead — `{drawio-figure}` expects the raw `.drawio` XML source.
 ```
+
+(sec_inline_drawio_diagrams)=
+### Inline DrawIO Diagrams
+
+You can also embed DrawIO XML directly in a fenced block using the `drawio` language:
+
+````markdown
+```drawio locked height=300
+<mxfile host="app.diagrams.net">
+  <diagram id="example" name="Architecture">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+```
+````
+
+No configuration is needed. HermesBaby renders inline diagrams as SVG for HTML and PDF for PDF
+builds. The optional `locked` and `height=N` attributes control the VS Code editor only; they do
+not change the published diagram. Only the first page of a multi-page diagram is rendered.
+
+Inline diagrams do not have captions or cross-reference labels. Use `{drawio-figure}` with a
+`.drawio` file when you need those, or need to select a page.
 
 ---
 
@@ -498,7 +525,7 @@ Caption text that appears below the image.
 Common figure options:
 
 | Option | Example | Effect |
-|---|---|---|
+| --- | --- | --- |
 | `:align:` | `center` | Horizontal alignment |
 | `:width:` | `80%` or `15cm` | Rendered width |
 | `:scale:` | `60%` | Scale relative to original |
@@ -582,7 +609,7 @@ The Handbook has not been approved so that there is no released version yet.
 
 Roles are inline elements that produce rich output. The syntax is:
 
-```
+```text
 {role-name}`content`
 ```
 
@@ -622,6 +649,20 @@ Links to an entry in the bibliography:
 As defined in {cite}`iso_24748_1_2024`, the lifecycle has six stages.
 ```
 
+Set a custom citation label for any BibTeX entry with its `label` or `shorthand` field. `label`
+takes precedence; if neither field has a value, HermesBaby uses the generated label as before:
+
+```bibtex
+@misc{sla,
+  title  = {Service Level Agreement},
+  author = {Example Author},
+  year   = {2026},
+  label  = {SLA}
+}
+```
+
+This entry is cited as `[SLA]`.
+
 ### `{doc}` — Link to Another Document by Path
 
 Links to another page using its file path relative to the project root:
@@ -633,7 +674,7 @@ See {doc}`/12-Glossary/index` for all terms.
 ### Project-Specific Roles
 
 | Role | Example | Renders as |
-|---|---|---|
+| --- | --- | --- |
 | `{jira}` | `` {jira}`PJBIO-1060` `` | Link to Jira ticket |
 | `{user}` | `` {user}`AMAN` `` | Mention a team member |
 | `{repo}` | `` {repo}`biom/BiomechWebGui` `` | Link to repository |
@@ -734,7 +775,7 @@ ambiguity.
 ## Quick Reference
 
 | Element | Syntax | When to use |
-|---|---|---|
+| --- | --- | --- |
 | Bold | `**text**` | Emphasize important terms or values |
 | Italic | `*text*` | Titles of external works, gentle emphasis |
 | Inline code | `` `code` `` | File names, identifiers, commands |

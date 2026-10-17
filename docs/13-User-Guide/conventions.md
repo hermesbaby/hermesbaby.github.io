@@ -166,9 +166,9 @@ context.
 
 ---
 
-## Two Draw.io Formats for Two Directives
+## Two Draw.io File Formats for Two Directives
 
-Draw.io diagrams exist in two forms depending on how they are embedded:
+External Draw.io files use one of two formats depending on how they are embedded:
 
 | File format | Directive | When to use |
 | --- | --- | --- |
@@ -181,6 +181,9 @@ exported SVG as an image — simpler but without interactivity.
 
 **Advantage:** The distinction is explicit in the file name: `.drawio.svg` signals "exported,
 static"; `.drawio` signals "source, live-rendered".
+
+You can also embed DrawIO XML inline in a Markdown `drawio` fenced block. See
+{ref}`sec_inline_drawio_diagrams` for syntax and limitations.
 
 ---
 

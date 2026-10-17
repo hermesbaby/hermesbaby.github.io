@@ -1,0 +1,49 @@
+name: Publish Documentation
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install uv package manager
+        run: |
+          python3 -m pip install --user uv
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Install HermesBaby
+        run: |
+          uv tool install --from git+https://github.com/hermesbaby/hermesbaby.git@main hermesbaby
+          uv tool update-shell
+          hermesbaby --version
+      - name: Install HermesBaby toolbox
+        run: |
+          source .github/workflows/mock_hb_tools_install.sh
+      - name: Build static site
+        run: |
+          hb html
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out/docs/html
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
