@@ -1,15 +1,17 @@
 # User Guide
 
-This guide explains how to write content using **MyST Markdown** — a superset of CommonMark
-that adds cross-referencing, directives, and roles designed for technical documentation.
+This guide takes you from your first Markdown page to a complete Hermesbaby documentation build.
+Start with the short MyST tutorial, follow the build workflow, and use the reference pages whenever
+you need details about a particular feature.
 
-The guide is ordered from the most common and simple structures to the less frequently used
-ones so you can get productive quickly and return to the advanced sections when needed.
+You do not need to learn every MyST feature at once. Begin with ordinary Markdown, then add page
+navigation and MyST features as your documentation grows.
 
 ```{toctree}
 :maxdepth: 1
 
+basics.md
 features.md
-language.md
+language-reference.md
 conventions.md
 ```
