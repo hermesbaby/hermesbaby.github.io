@@ -5,8 +5,9 @@ MyST Markdown is Markdown with extra features for technical documentation. A MyS
 plain text: write the content first, then use headings and links to make it easy to read and
 navigate.
 
-This tutorial introduces the syntax you need for a first page. The [MyST reference](language.md)
-covers figures, tables, directives, and other features in more detail.
+This tutorial introduces the syntax you need for a first page. It also shows how to add a diagram,
+link to a section, add a footnote, and cite a source. The [MyST reference](language.md) covers these
+and other features in more detail.
 
 ## 1. Write paragraphs and format text
 
@@ -85,7 +86,80 @@ reference
 Entries are paths relative to the current file and omit the `.md` extension. A folder's `index.md`
 is its entry point.
 
+## 6. Add a DrawIO figure
+
+Save the diagram as a `.drawio` file in a `_figures/` folder next to the page, then embed it with
+the `{drawio-figure}` directive:
+
+````markdown
+(fig_system_overview)=
+```{drawio-figure} _figures/system_overview.drawio
+:page-name: Overview
+
+System overview.
+```
+````
+
+The label lets you refer to the diagram later. For a static exported `.drawio.svg`, use `{figure}`
+instead. See the [MyST reference](language.md) for more details.
+
+## 7. Link to a section
+
+Add a label immediately before the heading you want to link to, then use `{ref}` where the link
+should appear:
+
+````markdown
+(sec_installation)=
+## Installation
+
+Install Hermesbaby before building the documentation.
+
+See {ref}`sec_installation` for installation instructions.
+````
+
+Labels are stable identifiers; use lowercase words separated by underscores. To refer to a figure
+by its number, use `{numref}` with the figure label, such as `{numref}`fig_system_overview``.
+
+## 8. Add a footnote
+
+Put a footnote marker where the extra detail belongs and define its text elsewhere on the page:
+
+```markdown
+MyST supports footnotes[^myst-note].
+
+[^myst-note]: Use footnotes for useful asides that would interrupt the main text.
+```
+
+## 9. Cite a source
+
+Add a BibTeX entry to `docs/bibliography.bib`, then cite its key in your text with `{cite}`:
+
+````markdown
+<!-- Add this entry to docs/bibliography.bib -->
+```bibtex
+@online{myst_docs,
+  title = {MyST Markdown Documentation},
+  author = {{Executable Books Project}},
+  url = {https://myst-parser.readthedocs.io/}
+}
+```
+````
+
+```markdown
+MyST extends Markdown for technical documentation {cite}`myst_docs`.
+```
+
+To display the cited sources on a bibliography page, add the `{bibliography}` directive:
+
+````markdown
+```{bibliography}
+```
+````
+
+The project's `docs/99-Appendix/04-Bibliography/index.md` is an example. See the
+[MyST reference](language.md) for citation options.
+
 ## Next steps
 
 Build and preview the page with [Hermesbaby](features.md). Once the basics feel familiar, continue
-to the [complete MyST reference](language.md) for cross-references, figures, tables, and directives.
+to the [complete MyST reference](language.md) for more options and examples.
