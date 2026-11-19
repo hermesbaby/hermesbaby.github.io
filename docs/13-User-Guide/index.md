@@ -12,6 +12,7 @@ navigation and MyST features as your documentation grows.
 
 basics.md
 features.md
+i18n.md
 language-reference.md
 conventions.md
 ```
